@@ -2,77 +2,277 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
 <title>スモサポ プライバシーポリシー</title>
 <style>
-  :root { color-scheme: dark; }
-  * { box-sizing: border-box; }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
     margin: 0;
-    padding: 32px 20px 64px;
-    background: #0a1626;
-    color: #e7eef6;
-    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Helvetica Neue", Arial, sans-serif;
+    background: #eef2ef;
+    color: #2b332f;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
     line-height: 1.85;
+    font-size: 16px;
+    letter-spacing: 0.01em;
     -webkit-font-smoothing: antialiased;
   }
-  main { max-width: 680px; margin: 0 auto; }
-  h1 {
-    font-size: 1.7rem;
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 20px 72px;
+  }
+
+  /* ---- Header ---- */
+  header.hero {
+    background: linear-gradient(180deg, #4f7d6b 0%, #436a5b 100%);
+    color: #f4f8f5;
+    border-radius: 20px;
+    padding: 36px 28px 30px;
+    margin: 16px 0 28px;
+  }
+  .leaf {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: #cfe3d8;
+    margin: 0 0 14px;
+  }
+  .leaf .dot { width: 8px; height: 8px; border-radius: 50%; background: #a9d4bd; display: inline-block; }
+  header.hero h1 {
+    font-size: 27px;
+    line-height: 1.4;
+    margin: 0 0 12px;
     font-weight: 700;
-    margin: 0 0 8px;
     letter-spacing: 0.02em;
   }
-  h2 {
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin: 36px 0 10px;
-    color: #bfe3ff;
+  header.hero p {
+    margin: 0;
+    font-size: 15px;
+    color: #dcebe3;
+    line-height: 1.8;
   }
-  p { margin: 0 0 14px; }
-  ul { margin: 0 0 14px; padding-left: 1.25em; }
-  li { margin: 0 0 8px; }
-  a { color: #7fc9ff; }
-  .updated { color: #8aa0b6; font-size: 0.9rem; margin-bottom: 28px; }
-  .disclaimer {
-    margin-top: 36px;
-    padding: 16px 18px;
-    border: 1px solid rgba(127, 201, 255, 0.25);
+  .updated {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 13px;
+    color: #cfe3d8;
+    background: rgba(255,255,255,0.12);
+    border-radius: 999px;
+    padding: 5px 14px;
+  }
+
+  /* ---- Sections ---- */
+  section {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px 24px 26px;
+    margin: 0 0 16px;
+    box-shadow: 0 1px 3px rgba(40,60,50,0.06);
+  }
+  h2 {
+    font-size: 18px;
+    margin: 0 0 14px;
+    font-weight: 700;
+    color: #2b332f;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    line-height: 1.4;
+  }
+  h2 .num {
+    flex: none;
+    font-size: 13px;
+    font-weight: 700;
+    color: #4f7d6b;
+    background: #e7efe9;
+    border-radius: 8px;
+    min-width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(2px);
+  }
+  p { margin: 0 0 12px; }
+  p:last-child { margin-bottom: 0; }
+  ul { margin: 0; padding: 0; list-style: none; }
+  li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+  li:last-child { margin-bottom: 0; }
+  li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #8fb6a3;
+  }
+  strong { font-weight: 700; color: #2b332f; }
+  a {
+    color: #3f6f5d;
+    text-decoration: none;
+    border-bottom: 1px solid #b6d2c5;
+    word-break: break-all;
+  }
+  a:hover { border-bottom-color: #3f6f5d; }
+
+  /* ---- Callout tags inside list ---- */
+  .tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 3px 10px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+  }
+  .tag.local { background: #e7efe9; color: #3f6f5d; }
+  .tag.send { background: #fdeedd; color: #b06b2c; }
+  .card-inset {
+    background: #f6f8f6;
     border-radius: 12px;
-    background: rgba(127, 201, 255, 0.06);
-    color: #cdd9e6;
-    font-size: 0.95rem;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+  }
+  .card-inset:last-child { margin-bottom: 0; }
+
+  /* ---- Disclaimer ---- */
+  .disclaimer {
+    background: #f3f0ea;
+    border: 1px solid #e3ddd0;
+    border-radius: 16px;
+    padding: 22px 24px;
+    margin-top: 8px;
+  }
+  .disclaimer h2 { color: #6b5d44; }
+  .disclaimer h2 .num { background: #e8e1d2; color: #8a7858; }
+  .disclaimer p { color: #5d564a; }
+
+  /* ---- Contact ---- */
+  .contact-mail {
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 12px;
+    color: #8a958f;
+    margin-top: 32px;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 600px) {
+    body { font-size: 15.5px; }
+    .wrap { padding: 12px 14px 56px; }
+    header.hero { padding: 28px 22px 24px; border-radius: 16px; }
+    header.hero h1 { font-size: 23px; }
+    section { padding: 20px 18px 22px; }
+    h2 { font-size: 17px; }
   }
 </style>
 </head>
 <body>
-<main>
-  <h1>スモサポ プライバシーポリシー</h1>
-  <p class="updated">最終更新日: 2026年6月11日</p>
+<div class="wrap">
 
-  <h2>収集する情報</h2>
-  <p>スモサポは、アカウント登録なしで使えるアプリです。</p>
-  <ul>
-    <li><strong>禁煙の記録</strong>（開始日時・喫煙本数・記録した出来事）は、すべてあなたの端末の中にのみ保存されます。開発者を含む第三者に送信されることはありません。</li>
-    <li><strong>匿名の利用統計</strong>: アプリの改善のため、匿名化された利用イベント（例: 画面が開かれた回数）を収集します。これには個人を特定できる情報（氏名・メールアドレス・位置情報など）は一切含まれません。利用者の区別には、端末内で生成したランダムなIDをハッシュ化した値のみを用います（広告用の識別子は使いません）。計測には TelemetryDeck（プライバシー保護型の計測サービス）を利用しています。</li>
-  </ul>
+  <header class="hero">
+    <p class="leaf"><span class="dot"></span>SUMOSAPO</p>
+    <h1>スモサポ プライバシーポリシー</h1>
+    <p>スモサポは、禁煙を続けるためのサポートアプリです。アカウント登録は必要ありません。このページでは、スモサポがどんな情報をどう扱うかを、できるだけわかりやすくお伝えします。</p>
+    <span class="updated">最終更新日：2026年6月23日</span>
+  </header>
 
-  <h2>利用目的</h2>
-  <p>匿名の利用統計は、アプリの機能改善のためにのみ使用します。広告目的の利用・第三者への販売は行いません。</p>
+  <section>
+    <h2><span class="num">1</span>収集する情報</h2>
+    <div class="card-inset">
+      <span class="tag local">端末内だけに保存・外部に送りません</span>
+      <p>禁煙の記録（開始日時、喫煙本数、記録した出来事＝「つい1本」などの記録）と各種設定を保存します。これらは端末内のデータベースと、ウィジェット表示のための端末内共有領域に保存され、開発者を含む第三者に送信されることはありません。</p>
+    </div>
+    <div class="card-inset">
+      <span class="tag send">唯一の外部送信：匿名の利用統計</span>
+      <p>アプリ改善のため、匿名の利用イベント（例：どの機能・画面が使われたか、14日継続に到達した、ラプスの後に復帰した、など）を送信します。個人を特定できる情報は一切含みません。</p>
+      <p>利用者の区別には、端末内で作成したランダムな文字列をハッシュ化した匿名IDだけを使います（広告ID＝IDFAは使いません）。計測には、プライバシーを重視するEU拠点のサービス TelemetryDeck を利用しています。</p>
+    </div>
+  </section>
 
-  <h2>トラッキングについて</h2>
-  <p>スモサポは、ユーザーや端末を横断的に追跡（トラッキング）しません。広告SDKは含まれていません。</p>
+  <section>
+    <h2><span class="num">2</span>集めない情報</h2>
+    <p>次の情報は集めません。そもそも、これらにアクセスする機能自体がアプリにありません。</p>
+    <ul>
+      <li>氏名・メールアドレス・電話番号・住所</li>
+      <li>位置情報、連絡先</li>
+      <li>写真・カメラ・マイク</li>
+      <li>健康データ</li>
+      <li>広告識別子（IDFA）</li>
+    </ul>
+  </section>
 
-  <h2>データの削除</h2>
-  <p>記録はすべて端末内にあるため、アプリを削除するとすべてのデータが削除されます。</p>
+  <section>
+    <h2><span class="num">3</span>利用目的</h2>
+    <p>匿名の利用統計は、アプリを改善するためだけに使います。広告には使いません。第三者へ販売・提供することもありません。</p>
+  </section>
 
-  <h2>お問い合わせ</h2>
-  <p><a href="mailto:daigo03031995@gmail.com">daigo03031995@gmail.com</a></p>
+  <section>
+    <h2><span class="num">4</span>トラッキングについて</h2>
+    <p>ユーザーや端末をまたいで追跡（トラッキング）することはありません。広告SDKやトラッキングSDKは入っていません。</p>
+  </section>
 
-  <p class="disclaimer">
-    スモサポは医療機器ではなく、ニコチン依存症の診断・治療を行うものではありません。禁煙にあたって医学的な助言が必要な場合は、医師・禁煙外来にご相談ください。
-  </p>
-</main>
+  <section>
+    <h2><span class="num">5</span>課金（サブスクリプション）について</h2>
+    <p>月額500円のサブスクリプション（30日間無料）をご用意しています。SOSと記録の機能は、無料のままお使いいただけます。</p>
+    <p>決済はすべて Apple（App Store）が処理します。クレジットカードなどの支払い情報を開発者が受け取ることはありません。アプリは「課金中かどうか」の判定だけを Apple から受け取ります。</p>
+  </section>
+
+  <section>
+    <h2><span class="num">6</span>データの保存場所と削除</h2>
+    <p>データは基本的にすべて端末内にあります。サーバーには保存しません（匿名の利用統計を除く）。</p>
+    <p>アプリを削除すると、端末内のデータはすべて消えます。</p>
+  </section>
+
+  <section>
+    <h2><span class="num">7</span>子どものプライバシー</h2>
+    <p>スモサポは、13歳未満の子どもを主な対象としていません。</p>
+  </section>
+
+  <section>
+    <h2><span class="num">8</span>外部サービス</h2>
+    <p>あわせて、以下のプライバシーポリシーもご確認いただけます。</p>
+    <ul>
+      <li>Apple（App Store）のプライバシーポリシー：<a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></li>
+      <li>TelemetryDeck のプライバシーポリシー：<a href="https://telemetrydeck.com/privacy/">https://telemetrydeck.com/privacy/</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">9</span>ポリシーの変更</h2>
+    <p>内容を変更するときは、このページを更新してお知らせします。</p>
+  </section>
+
+  <section>
+    <h2><span class="num">10</span>お問い合わせ</h2>
+    <p>ご質問やご意見は、こちらまでお気軽にご連絡ください。</p>
+    <p class="contact-mail"><a href="mailto:owl2960product@gmail.com">owl2960product@gmail.com</a></p>
+  </section>
+
+  <div class="disclaimer">
+    <h2><span class="num">!</span>免責について</h2>
+    <p>スモサポは医療機器ではなく、ニコチン依存症の診断や治療を行うものではありません。医学的な助言が必要な場合は、医師や禁煙外来へご相談ください。</p>
+  </div>
+
+  <footer>
+    スモサポ プライバシーポリシー
+  </footer>
+
+</div>
 </body>
 </html>
